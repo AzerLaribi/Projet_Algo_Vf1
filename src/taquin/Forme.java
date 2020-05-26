@@ -24,7 +24,6 @@ import javax.swing.KeyStroke;
 import javax.swing.SwingUtilities;
 import javax.swing.UIManager;
 
-
 public class Forme extends JFrame {
 
     private static final long serialVersionUID = 1L;
@@ -34,7 +33,7 @@ public class Forme extends JFrame {
     public JMenuItem mQuiter, mOuvrir, mLancer, mRejouer, mApropos;
     public JMenuItem mHowToUse, mStop, mStart, mScore;
     public JMenuItem mLancerPauser;
-    public JRadioButtonMenuItem mWindows, mWindowsClassic, mMetal, mSystem;
+    public JRadioButtonMenuItem mWindows, mNimbus, mWindowsClassic, mMetal, mCDEMotif, mSystem;
     public JRadioButtonMenuItem m3, m4, m5, mAutreType;
     public JRadioButtonMenuItem m50, m75, m100;
 
@@ -47,7 +46,7 @@ public class Forme extends JFrame {
     //les variables taille du carreau et le type de jeu avec les valeurs par défaut
     private int taille = 75, nbCarreaux = 3;
 
-    //la variable boolean démarrer qui stock l'état du jeu ( démarrer ou non)
+    //la variable boolean démarrer qui stock l'ï¿½tat du jeu ( démarrer ou non)
     private boolean demarrer = false;
     private boolean arreter = false;
 
@@ -109,11 +108,10 @@ public class Forme extends JFrame {
 
 
         /* associer un MouseMotionListener à cette fenètre
-         * tout  juste pour changer le cursor au cours du jeu
          */
         this.addMouseMotionListener(new MouseController(this));//
 
-        /* associer un MouseListener à cette fenètre
+        /* associer un MouseListener ï¿½ cette fenï¿½tre
          * pour déplacer les images
          */
         this.addMouseListener(new MouseController(this));
@@ -139,7 +137,7 @@ public class Forme extends JFrame {
 
         mJeu = new JMenu("Jeu du Taquin");
         mHelp = new JMenu("Aide");
-        mTheme = new JMenu("Theme");
+        mTheme = new JMenu("ThÃ¨me");
 
         mJeu.setMnemonic(KeyEvent.VK_J); //raccourci alt+F
         mHelp.setMnemonic(KeyEvent.VK_A); //raccourci alt+H
@@ -173,18 +171,23 @@ public class Forme extends JFrame {
         m75 = new JRadioButtonMenuItem("Taille 75px");
         m100 = new JRadioButtonMenuItem("Taille 100px");
 
+        mNimbus = new JRadioButtonMenuItem("Nimbus");
         mWindows = new JRadioButtonMenuItem("Windowns");
         mWindowsClassic = new JRadioButtonMenuItem("Windows Classic");
+        mCDEMotif = new JRadioButtonMenuItem("CDE/Motif");
         mMetal = new JRadioButtonMenuItem("Metal");
         mSystem = new JRadioButtonMenuItem("System look & fell");
+
+        mNimbus.setMnemonic(KeyEvent.VK_N);//raccourci alt+N
         mWindows.setMnemonic(KeyEvent.VK_W);//raccourci alt+W
         mWindowsClassic.setMnemonic(KeyEvent.VK_C);//raccourci alt+C
+        mCDEMotif.setMnemonic(KeyEvent.VK_D);//raccourci alt+D
         mMetal.setMnemonic(KeyEvent.VK_M);//raccourci alt+M
         mSystem.setMnemonic(KeyEvent.VK_S);//raccourci alt+S
 
     }//
 
-    //la méthode qui construit la barre de menu
+    //la mï¿½thode qui construit la barre de menu
     public void createMenu() {
 
         // mettre le barre de menu 'principale' comme barre de menu pour cette fenètre 
@@ -241,7 +244,7 @@ public class Forme extends JFrame {
         mStart.setEnabled(false);
         mStop.setEnabled(false);
 
-        //arreter le jeu et lecompteur
+        //arrï¿½ter le jeu et lecompteur
         mStop.setIcon(new ImageIcon("Ressources/Icons/pause.png"));
         mStop.setAccelerator(KeyStroke.getKeyStroke(KeyEvent.VK_SPACE, Event.SHIFT_MASK));
         mStop.addActionListener(new ActionsController(this));
@@ -277,7 +280,7 @@ public class Forme extends JFrame {
         mType.add(m5);
         mType.add(mAutreType);
 
-        m3.setSelected(true);     //mettre m3 qui est selectionné
+        m3.setSelected(true);     //mettre m3 qui est selectionnï¿½
         m3.addActionListener(new ActionsController(this));
         m4.addActionListener(new ActionsController(this));
         m5.addActionListener(new ActionsController(this));
@@ -293,19 +296,25 @@ public class Forme extends JFrame {
         //--le menu LookAndFeel
         mTheme.add(mWindows);
         mTheme.add(mWindowsClassic);
+        mTheme.add(mNimbus);
         mTheme.add(mMetal);
+        mTheme.add(mCDEMotif);
         mTheme.add(mSystem);
 
         mWindows.addActionListener(new ActionsController(this));
         mWindowsClassic.addActionListener(new ActionsController(this));
-        mWindows.setSelected(true);
+        mNimbus.setSelected(true);
+        mNimbus.addActionListener(new ActionsController(this));
         mMetal.addActionListener(new ActionsController(this));
+        mCDEMotif.addActionListener(new ActionsController(this));
         mSystem.addActionListener(new ActionsController(this));
 
         ButtonGroup gLook = new ButtonGroup();
         gLook.add(mWindows);
         gLook.add(mWindowsClassic);
+        gLook.add(mNimbus);
         gLook.add(mMetal);
+        gLook.add(mCDEMotif);
         gLook.add(mSystem);
 		//--
 
@@ -327,7 +336,7 @@ public class Forme extends JFrame {
 
     }//fin de la méthod createMenu
 
-    //la méthode qui initialise la fenètre
+    //la méthode qui initialise la fenï¿½tre
     public void initialiser() {
         changeCursor('D');
         this.setContentPane(pan);

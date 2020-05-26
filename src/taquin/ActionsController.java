@@ -11,6 +11,7 @@ import javax.swing.JOptionPane;
 import javax.swing.SwingUtilities;
 import javax.swing.UIManager;
 
+
 public class ActionsController implements ActionListener, WindowListener {
 
     private Object o;
@@ -62,7 +63,7 @@ public class ActionsController implements ActionListener, WindowListener {
                 forme.mStart.setEnabled(false);
                 forme.mStop.setEnabled(true);
             }//
-            //arrÃªter le jeu et le compteur
+            //arréter le jeu et le compteur
             else if (e.getSource() == forme.mStop) {
                 Compteur.pauseTime();
                 forme.setArreter(true);
@@ -87,7 +88,7 @@ public class ActionsController implements ActionListener, WindowListener {
                 JOptionPane.showMessageDialog(forme, "Pour que vous pouvez jouer, il faut que vous suivez ces étapes :\n"
                         + "             1- importer une image en cliquant sur 'Importer une image' ou 'CTRL+O'.\n"
                         + "             2- Choisir le type du jeu (3x3, 4x4, 5x5 ou Autres).\n"
-                        + "             3- Choisir la taille du carrè (la taille des sous images 50px, 75px et 100px).\n"
+                        + "             3- Choisir la taille du carré (la taille des sous images 50px, 75px et 100px).\n"
                         + "             4- Cliquer sur 'lancer le jeu' ou 'CTRL+N'.\n"
                         + "             5- S'amuser :)\n",
                         "Comment jouer ?", JOptionPane.INFORMATION_MESSAGE);
@@ -95,8 +96,8 @@ public class ActionsController implements ActionListener, WindowListener {
             //A propos
             else if (e.getSource() == forme.mApropos) {
                 Toolkit.getDefaultToolkit().beep();
-                JOptionPane.showMessageDialog(forme, "Réaliser par:"
-                        + "\n       Azer Laribi\n       Imen Ben Haj Salem\n       IA 1.1\n", "A propos ?", JOptionPane.INFORMATION_MESSAGE);
+                JOptionPane.showMessageDialog(forme, "Réalisé par:"
+                        + "\n       Azer Laribi\n       Imen Ben Haj Salem\n       IA1.1\n", "A propos ?", JOptionPane.INFORMATION_MESSAGE);
             }//
             //la taille 50px
             else if (e.getSource() == forme.m50) {
@@ -176,7 +177,7 @@ public class ActionsController implements ActionListener, WindowListener {
                 } catch (Exception ex) {
                     JOptionPane.showMessageDialog(forme, ex.getMessage(), "Erreur", JOptionPane.ERROR_MESSAGE);
                 }
-                //actualiser toutes les composantes de la fenï¿½tre
+                //actualiser toutes les composantes de la fenètre
                 SwingUtilities.updateComponentTreeUI(forme);
             } //
             //le look and fell Windows Classic
@@ -186,7 +187,7 @@ public class ActionsController implements ActionListener, WindowListener {
                 } catch (Exception ex) {
                     JOptionPane.showMessageDialog(forme, ex.getMessage(), "Erreur", JOptionPane.ERROR_MESSAGE);
                 }
-                //actualiser toutes les composantes de la fenï¿½tre
+                //actualiser toutes les composantes de la fenètre
                 SwingUtilities.updateComponentTreeUI(forme);
             } //
             //le look and fell Nimbus
@@ -196,7 +197,7 @@ public class ActionsController implements ActionListener, WindowListener {
                 } catch (Exception ex) {
                     JOptionPane.showMessageDialog(forme, ex.getMessage(), "Erreur", JOptionPane.ERROR_MESSAGE);
                 }
-                //actualiser toutes les composantes de la fenï¿½tre
+                //actualiser toutes les composantes de la fenètre
                 SwingUtilities.updateComponentTreeUI(forme);
             }
             //
@@ -207,7 +208,7 @@ public class ActionsController implements ActionListener, WindowListener {
                 } catch (Exception ex) {
                     JOptionPane.showMessageDialog(forme, ex.getMessage(), "Erreur", JOptionPane.ERROR_MESSAGE);
                 }
-                //actualiser toutes les composantes de la fenï¿½tre
+                //actualiser toutes les composantes de la fenètre
                 SwingUtilities.updateComponentTreeUI(forme);
             } //
             //le look and fell CDEMotif
@@ -217,7 +218,7 @@ public class ActionsController implements ActionListener, WindowListener {
                 } catch (Exception ex) {
                     JOptionPane.showMessageDialog(forme, ex.getMessage(), "Erreur", JOptionPane.ERROR_MESSAGE);
                 }
-                //actualiser toutes les composantes de la fenï¿½tre
+                //actualiser toutes les composantes de la fenètre
                 SwingUtilities.updateComponentTreeUI(forme);
             } //
             //le look and fell System
@@ -227,7 +228,7 @@ public class ActionsController implements ActionListener, WindowListener {
                 } catch (Exception ex) {
                     JOptionPane.showMessageDialog(forme, ex.getMessage(), "Erreur", JOptionPane.ERROR_MESSAGE);
                 }
-                //actualiser toutes les composantes de la fenï¿½tre
+                //actualiser toutes les composantes de la fenètre
                 SwingUtilities.updateComponentTreeUI(forme);
             } //
             //la musique
