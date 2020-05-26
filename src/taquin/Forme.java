@@ -173,13 +173,10 @@ public class Forme extends JFrame {
         m75 = new JRadioButtonMenuItem("Taille 75px");
         m100 = new JRadioButtonMenuItem("Taille 100px");
 
-       
         mWindows = new JRadioButtonMenuItem("Windowns");
         mWindowsClassic = new JRadioButtonMenuItem("Windows Classic");
         mMetal = new JRadioButtonMenuItem("Metal");
         mSystem = new JRadioButtonMenuItem("System look & fell");
-
-        mNimbus.setMnemonic(KeyEvent.VK_N);//raccourci alt+N
         mWindows.setMnemonic(KeyEvent.VK_W);//raccourci alt+W
         mWindowsClassic.setMnemonic(KeyEvent.VK_C);//raccourci alt+C
         mMetal.setMnemonic(KeyEvent.VK_M);//raccourci alt+M
